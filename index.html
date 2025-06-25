@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Chatbot Interface</title>
     <style>
         * {
@@ -26,6 +26,79 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                height: 100vh;
+            }
+            
+            .main-page, .chat-page {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .main-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                max-height: 200px;
+                overflow-y: auto;
+                border-right: none;
+                border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+                flex: 1;
+            }
+            
+            .main-logo {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+            
+            .welcome-text {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+            }
+            
+            .question-text {
+                font-size: 1em;
+                margin-bottom: 30px;
+            }
+            
+            .auth-container {
+                width: 90%;
+                max-width: 350px;
+                padding: 30px 20px;
+            }
+            
+            .chat-messages {
+                min-height: 300px;
+                max-height: 60vh;
+            }
+            
+            .message-content {
+                max-width: 85%;
+            }
+            
+            .chat-input {
+                min-height: 45px;
+                font-size: 16px; /* Empêche le zoom sur iOS */
+            }
+            
+            .conversation-item {
+                padding: 10px;
+                margin-bottom: 8px;
+                font-size: 14px;
+            }
         }
 
         .page {
@@ -187,7 +260,7 @@
             padding: 40px;
             text-align: center;
             height: 100%;
-            margin-left:  150px; /* Compense la moitié de la largeur de la sidebar */
+            margin-left: -75px; /* Déplace le contenu vers la droite */
         }
 
         .main-logo {
